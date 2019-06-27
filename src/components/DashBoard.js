@@ -4,6 +4,7 @@ import MenuItem from "antd/lib/menu/MenuItem";
 import { NavLink } from "react-router-dom";
 import EditModal from "./EditModal";
 import AddStudents from "./AddStudents";
+import InModal from "./InModal";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -106,6 +107,9 @@ class DashBoard extends React.Component {
                   other
                 </Menu.Item>
               </SubMenu>
+              <Menu key="4" style={{ paddingLeft: "15px" }}>
+                <InModal />
+              </Menu>
             </Menu>
           </Sider>
           <Layout style={{ padding: "0 5px 5px", borderBlockColor: "black" }}>
