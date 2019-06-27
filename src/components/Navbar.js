@@ -5,15 +5,27 @@ const { Header } = Layout;
 
 export default function Navbar() {
   return (
-    <Header>
+    <Header style={{ lineHeight: "64px" }}>
       <div className="logo" />
       <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={["2"]}
-        style={{ lineHeight: "64px" }}
+        style={{ lineHeight: "34px", textAlign: "center" }}
       >
-        <Menu.Item key="1">Attendance</Menu.Item>
+        <Menu.Item>
+          <h1
+            style={{
+              color: "white",
+              fontWeight: "bolder",
+              fontSize: "40px",
+              marginTop: "10px",
+              color: "linen"
+            }}
+          >
+            <strong>ATTENDANCE</strong>
+          </h1>
+        </Menu.Item>
       </Menu>
     </Header>
   );

@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import Wrapper from "../components/Wrapper";
-import SignUp from "./../components/SignUp";
-import Navbar from '../components/Navbar';
+import SignIn from "../components/SignIn";
+import Navbar from "../components/Navbar";
 
 class Landing extends Component {
-    render() {
-        return (
-            <Wrapper>
-                <Navbar />
-                <SignUp />
-            </Wrapper>
-        )
-    }
+  render() {
+    return (
+      <Wrapper>
+        <Navbar />
+        <SignIn />
+      </Wrapper>
+    );
+  }
 }
 
-export default Landing
+export default Landing;

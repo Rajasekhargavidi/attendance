@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Avatar } from "antd";
 import { Form, Icon, Input, Button, Checkbox } from "antd";
+import { NavLink, Link } from "react-router-dom";
 
 class Form1 extends Component {
   handleSubmit = e => {
@@ -15,6 +17,7 @@ class Form1 extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="form-layout">
+        <Avatar size={100} icon="user" />
         <h2>Sign In</h2>
         <Form onSubmit={this.handleSubmit} className="login-form">
           <Form.Item>
@@ -57,13 +60,15 @@ class Form1 extends Component {
             </a>
             <div />
             <Button
-              type="primary"
+              type="secondary"
               htmlType="submit"
               className="login-form-button"
             >
-              Sign In{" "}
+              <NavLink to="/Dashboard">Sign In</NavLink>
+              {"     "}
             </Button>
-            Or <a href="">signup now!</a>
+            Or {"  "}
+            <Link to="SignUp">Register now!</Link>
           </Form.Item>
         </Form>
       </div>
