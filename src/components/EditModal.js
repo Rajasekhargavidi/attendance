@@ -67,8 +67,10 @@ class EditModal extends React.Component {
         >
           <div onSubmit={this.onFormSubmit}>
             <Form>
-              <label>Name</label>
+              <label>Student Name</label>
               <Input type="text" id="name" onChange={this.handleChange} />
+              <label>Father Name</label>
+              <Input type="text" id="fatherName" onChange={this.handleChange} />
               <label>Roll.No</label>
               <Input type="number" id="rollNO" onChange={this.handleChange} />
               <label>Course</label>
