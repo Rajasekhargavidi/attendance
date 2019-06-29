@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import { Layout } from 'antd';
+import React, { Component } from "react";
+import { Layout } from "antd";
 
 const layoutStyle = {
-    width: "100%"
-}
+  width: "100%"
+};
 
 class Wrapper extends Component {
-    render() {
-        return (
-            <Layout className="layout" style={layoutStyle}>
-                {this.props.children}
-            </Layout>
-        )
-    }
+  render() {
+    return (
+      <Layout className="layout" style={layoutStyle}>
+        {this.props.children}
+      </Layout>
+    );
+  }
 }
 
-export default Wrapper
+export default Wrapper;

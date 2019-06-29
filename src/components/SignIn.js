@@ -38,7 +38,7 @@ class Form1 extends Component {
   };
 
   render() {
-    const { getFieldDecorator } = this.props.form; 
+    const { getFieldDecorator } = this.props.form;
     const { error } = this.state;
     return (
       <div className="form-layout">
