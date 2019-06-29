@@ -1,6 +1,6 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb, Icon } from "antd";
-import { NavLink } from "react-router-dom";
+import { Layout, Menu, Breadcrumb, Icon, Button } from "antd";
+import { NavLink, Link } from "react-router-dom";
 import EditModal from "./EditModal";
 import AddStudents from "./AddStudents";
 import InModal from "./InModal";
@@ -11,39 +11,38 @@ class DashBoard extends React.Component {
   render() {
     return (
       <div>
-        <Layout style={{ height: "600px" }}>
-          <Header className="header">
-            <div className="logo" />
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={["2"]}
-              style={{ lineHeight: "50px" }}
-            >
-              <Menu.Item>
-                <h1 style={{ color: "white" }}>
-                  <Icon
-                    type="dashboard"
-                    theme="filled"
-                    style={{ fontSize: "25px", color: "" }}
-                  />
-                  Teacher DashBoard
-                </h1>
-              </Menu.Item>
-              <Menu.Item>
-                <h2 style={{ color: "white" }}>
-                  <AddStudents />
-                </h2>
-              </Menu.Item>
-              <Menu.Item>
-                <h2 style={{ color: "white" }}>
-                  <EditModal />
-                </h2>
-              </Menu.Item>
-            </Menu>
-          </Header>
+        <Layout style={{ height: "100%" }}>
+          <div style={{ height: "45px" }}>
+            <Header className="header">
+              <div className="logo" />
+              <Menu
+                theme="dark"
+                mode="horizontal"
+                defaultSelectedKeys={["2"]}
+                style={{ lineHeight: "45px" }}
+              >
+                <Menu.Item>
+                  <h3 style={{ color: "white" }}>
+                    <Icon
+                      type="dashboard"
+                      theme="filled"
+                      style={{ fontSize: "25px", color: "" }}
+                    />
+                    Teacher DashBoard
+                  </h3>
+                </Menu.Item>
+                <div style={{ float: "right" }}>
+                  <Menu.Item>
+                    <h2 style={{ color: "white" }}>
+                      <EditModal />
+                    </h2>
+                  </Menu.Item>
+                </div>
+              </Menu>
+            </Header>
+          </div>
           <Layout>
-            <Sider width={250} style={{ background: "#ffe" }}>
+            <Sider width={180} style={{ background: "#ffe" }}>
               <Menu
                 mode="inline"
                 defaultSelectedKeys={["1"]}
@@ -92,7 +91,10 @@ class DashBoard extends React.Component {
                 >
                   <Menu.Item key="9">
                     <Icon type="book" theme="filled" />
-                    List
+                    <Link to="/AddStudents" name="Add Students">
+                      {" "}
+                      Add Student
+                    </Link>
                   </Menu.Item>
                   <Menu.Item key="10">
                     <Icon type="account-book" theme="filled" />
@@ -113,11 +115,6 @@ class DashBoard extends React.Component {
               </Menu>
             </Sider>
             <Layout style={{ padding: "0 5px 5px", borderBlockColor: "black" }}>
-              <Breadcrumb style={{ margin: "1px", borderBlockColor: "black" }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
-              </Breadcrumb>
               <Content
                 style={{
                   background: "#fff",
@@ -137,7 +134,7 @@ class DashBoard extends React.Component {
           style={{
             textAlign: "center",
             color: "white",
-            backgroundColor: "black"
+            backgroundColor: "darkolivegreen"
           }}
         >
           Students Attendance App ©2019 Created by Sidabs Labs

@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Layout } from "antd";
 import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
+import AddStudents from "./components/AddStudents";
 
 const { Content } = Layout;
 
@@ -25,6 +26,7 @@ class App extends Component {
                 <Route path="/SignUp" component={SignUp} />
                 <Route path="/SignIn" component={SignIn} />
                 <Route path="/DashBoard" component={DashBoard} />
+                <Route path="/AddStudents" component={AddStudents} />
               </Switch>
             </div>
           </Content>

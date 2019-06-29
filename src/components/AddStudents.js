@@ -1,76 +1,133 @@
-import React from "react";
-import { Modal, Button, Form, Input } from "antd";
-import MyUpload from "./upLoadFile";
+import React, { Component } from "react";
 
-class AddStudents extends React.Component {
+class AddStudents extends Component {
   state = {
-    loading: false,
-    visible: false
+    studentName: "",
+    parentName: "",
+    course: "",
+    address: "",
+    rollNumber: "",
+    gender: "",
+    inputGroupFile01: ""
   };
 
-  showModal = () => {
-    this.setState({
-      visible: true
-    });
+  handleChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
   };
 
-  handleOk = () => {
-    this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false, visible: false });
-    }, 3000);
-  };
-
-  handleCancel = () => {
-    this.setState({ visible: false });
+  handleFormSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
   };
 
   render() {
-    const { visible, loading } = this.state;
     return (
-      <div>
-        <Button type="primary" onClick={this.showModal}>
-          Add Students
-        </Button>
-        <Modal
-          visible={visible}
-          title="Add Students"
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-          footer={[
-            <Button key="back" onClick={this.handleCancel}>
-              Return
-            </Button>,
-            <Button
-              key="submit"
-              type="primary"
-              loading={loading}
-              onClick={this.handleOk}
-            >
-              Submit
-            </Button>
-          ]}
-        >
-          <div>
-            <Form>
-              <label>Name of the Student</label>
-              <Input type="text" id="name" />
-              <label>Father/Gaurdian Name</label>
-              <Input type="text" id="fatherName" />
-              <label>Roll.Number</label>
-              <Input type="number" id="rollNum" />
-              <label>Courses</label>
-              <Input type="text" id="courses" />
-              <label>Gender</label>
-              <Input type="text" id="gender" />
-              <label>Adress</label>
-              <Input type="text" id="address" />
-              <label>Phone Number</label>
-              <Input type="number" id="phoneNumber" />
-              <MyUpload />
-            </Form>
+      <div
+        className="user-form"
+        style={{ marginTop: "60px", marginRight: "100px", marginLeft: "100px" }}
+      >
+        <form onSubmit={this.handleFormSubmit}>
+          <div class="form-group row">
+            <label for="studentName" class="col-sm-2 col-form-label">
+              Name of the Student
+            </label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="studentName"
+                placeholder="Enter the student name"
+                onChange={this.handleChange}
+              />
+            </div>
           </div>
-        </Modal>
+          <div class="form-group row">
+            <label for="parentName" class="col-sm col-form-label">
+              Name of the Parent
+            </label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="parentName"
+                placeholder="Enter the parent name"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="course" class="col-sm-2 col-form-label">
+              Course
+            </label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="course"
+                placeholder="Enter the Course"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="Address" class="col-sm-2 col-form-label">
+              Address
+            </label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="Fill your present address"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="rollNUmber" class="col-sm-2 col-form-label">
+              Roll Number
+            </label>
+            <div class="col-sm-10">
+              <input
+                type="number"
+                class="form-control"
+                id="rollNumber"
+                placeholder="Enter your Roll Number"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="rollNumber" class="col-sm-2 col-form-label">
+              Gender
+            </label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="gender"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div class="custom-file">
+            <label for="Upload" class="col-sm-2 col-form-label">
+              Upload
+            </label>
+            <input
+              type="file"
+              class="custom-file-input"
+              id="inputGroupFile01"
+              onChange={this.handleChange}
+            />
+            <label class="custom-file-label" for="inputGroupFile01">
+              Choose file
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">
+            Submit
+          </button>
+        </form>
       </div>
     );
   }

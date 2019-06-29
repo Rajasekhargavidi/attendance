@@ -89,59 +89,63 @@ class RegistrationForm extends React.Component {
     };
 
     return (
-      <Form
-        {...formItemLayout}
-        onSubmit={this.handleSubmit}
-        style={{ width: "98%" }}
+      <div
+        style={{ marginLeft: "60px", marginRight: "100px", marginTop: "60px" }}
       >
-        <h1>Sign Up</h1>
-        <Form.Item label="E-mail">
-          {getFieldDecorator("email", {
-            rules: [
-              {
-                type: "email",
-                message: "The input is not valid E-mail!"
-              },
-              {
-                required: true,
-                message: "Please input your E-mail!"
-              }
-            ]
-          })(<Input />)}
-        </Form.Item>
-        <Form.Item label="Password" hasFeedback>
-          {getFieldDecorator("password", {
-            rules: [
-              {
-                required: true,
-                message: "Please input your password!"
-              },
-              {
-                validator: this.validateToNextPassword
-              }
-            ]
-          })(<Input.Password />)}
-        </Form.Item>
-        <Form.Item label="Confirm Password" hasFeedback>
-          {getFieldDecorator("confirm", {
-            rules: [
-              {
-                required: true,
-                message: "Please confirm your password!"
-              },
-              {
-                validator: this.compareToFirstPassword
-              }
-            ]
-          })(<Input.Password onBlur={this.handleConfirmBlur} />)}
-        </Form.Item>
-        <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
-            Register
-          </Button>
-          <Link to="/SignIn">Back to SignIn</Link>
-        </Form.Item>
-      </Form>
+        <Form
+          {...formItemLayout}
+          onSubmit={this.handleSubmit}
+          style={{ width: "98%" }}
+        >
+          <h1>Sign Up</h1>
+          <Form.Item label="E-mail">
+            {getFieldDecorator("email", {
+              rules: [
+                {
+                  type: "email",
+                  message: "The input is not valid E-mail!"
+                },
+                {
+                  required: true,
+                  message: "Please input your E-mail!"
+                }
+              ]
+            })(<Input />)}
+          </Form.Item>
+          <Form.Item label="Password" hasFeedback>
+            {getFieldDecorator("password", {
+              rules: [
+                {
+                  required: true,
+                  message: "Please input your password!"
+                },
+                {
+                  validator: this.validateToNextPassword
+                }
+              ]
+            })(<Input.Password />)}
+          </Form.Item>
+          <Form.Item label="Confirm Password" hasFeedback>
+            {getFieldDecorator("confirm", {
+              rules: [
+                {
+                  required: true,
+                  message: "Please confirm your password!"
+                },
+                {
+                  validator: this.compareToFirstPassword
+                }
+              ]
+            })(<Input.Password onBlur={this.handleConfirmBlur} />)}
+          </Form.Item>
+          <Form.Item {...tailFormItemLayout}>
+            <Button type="primary" htmlType="submit">
+              Register
+            </Button>
+            <Link to="/SignIn">Back to SignIn</Link>
+          </Form.Item>
+        </Form>
+      </div>
     );
   }
 }

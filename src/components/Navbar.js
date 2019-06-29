@@ -16,11 +16,10 @@ export default function Navbar() {
         <Menu.Item>
           <h1
             style={{
-              color: "white",
+              color: "cyan",
               fontWeight: "bolder",
-              fontSize: "40px",
-              marginTop: "10px",
-              color: "linen"
+              fontSize: "32px",
+              marginTop: "10px"
             }}
           >
             <strong>ATTENDANCE</strong>
